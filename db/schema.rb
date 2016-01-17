@@ -11,10 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160115185138) do
+ActiveRecord::Schema.define(version: 20160115194352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "colors", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.string   "palette_50",  null: false
+    t.string   "palette_100", null: false
+    t.string   "palette_200", null: false
+    t.string   "palette_300", null: false
+    t.string   "palette_400", null: false
+    t.string   "palette_500", null: false
+    t.string   "palette_600", null: false
+    t.string   "palette_700", null: false
+    t.string   "palette_800", null: false
+    t.string   "palette_900", null: false
+    t.string   "accent_100"
+    t.string   "accent_200"
+    t.string   "accent_400"
+    t.string   "accent_700"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "light"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "user_name"

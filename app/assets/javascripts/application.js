@@ -15,3 +15,15 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+function random(){
+  return Math.floor(Math.random()*19);
+}
+$(document).ready(function(){
+  $('body').css('background', colorArray[random()]);
+});
+
+setInterval(function(){
+  $('body').css('background', colorArray[random()]);
+  console.log(colorArray[random()]);
+}, 3000);

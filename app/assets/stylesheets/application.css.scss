@@ -17,4 +17,14 @@
   @import "bootstrap";
   @import "bootstrap-material-design";
 
-body { padding-top: 70px; }
+body {
+  padding-top: 70px;
+  transition: 3s linear;
+}
+
+.jumbotron {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
