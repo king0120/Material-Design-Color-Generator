@@ -3,6 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Project2
+    =csrf_meta_tags
     :javascript
       colorArray = #{Color.array_500}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true

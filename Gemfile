@@ -17,9 +17,11 @@ gem "rails_best_practices"
 gem 'rubocop', require: false
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap-material-design'
+gem 'devise-bootstrap-views'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails'
 end
 
 group :development do
