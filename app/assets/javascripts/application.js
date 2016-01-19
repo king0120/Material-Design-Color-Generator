@@ -14,16 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require newPalette
 //= require_tree .
 
 function random(){
   return Math.floor(Math.random()*19);
 }
 $(document).ready(function(){
-  $('body').css('background', colorArray[random()]);
+  $('.colorCircle').css('background', colorsJson[random()].palette_500);
 });
 
 setInterval(function(){
-  $('body').css('background', colorArray[random()]);
-  console.log(colorArray[random()]);
-}, 3000);
+  $('.colorCircle').css('background', colorsJson[random()].palette_500);
+}, 2000);

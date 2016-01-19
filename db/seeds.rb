@@ -340,3 +340,32 @@ Color.create(
   palette_900: '#263238',
   light: true
 )
+Color.create(
+  name: 'black',
+  palette_50: '#000000',
+  palette_100: '#000000',
+  palette_200: '#000000',
+  palette_300: '#000000',
+  palette_400: '#000000',
+  palette_500: '#000000',
+  palette_600: '#000000',
+  palette_700: '#000000',
+  palette_800: '#000000',
+  palette_900: '#000000',
+  light: true
+)
+
+Color.create(
+  name: 'white',
+  palette_50: '#ffffff',
+  palette_100: '#ffffff',
+  palette_200: '#ffffff',
+  palette_300: '#ffffff',
+  palette_400: '#ffffff',
+  palette_500: '#ffffff',
+  palette_600: '#ffffff',
+  palette_700: '#ffffff',
+  palette_800: '#ffffff',
+  palette_900: '#ffffff',
+  light: false
+)

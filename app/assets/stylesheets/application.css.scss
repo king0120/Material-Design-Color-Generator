@@ -13,18 +13,11 @@
  */
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-  @import "bootstrap-sprockets";
-  @import "bootstrap";
-  @import "bootstrap-material-design";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap-material-design";
+@import "newPalette";
+@import "user_palettes";
+@import "edit";
 
-body {
-  padding-top: 70px;
-  transition: 3s linear;
-}
-
-.jumbotron {
-  margin: 0 auto;
-  width: 80%;
-  text-align: center;
-}
 

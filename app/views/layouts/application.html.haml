@@ -5,13 +5,18 @@
     %title Project2
     =csrf_meta_tags
     :javascript
-      colorArray = #{Color.array_500}
+      colorsJson = #{Color.json}
+
+
+
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
 
-  %body
+  %body.container-fluid
+    .background
+    .background2
     %header= render 'layouts/navigation'
-    %main.container-fluid
+    %main
       = flash_messages
       = yield

@@ -1,6 +1,8 @@
+%li
+  = link_to "Explore", explore_path
 - if user_signed_in?
   %li
-    = link_to current_user.user_name, new_user_session_path
+    = link_to current_user.user_name, palettes_path
   %li
     = link_to "Sign-Out", destroy_user_session_path, method: :delete
 - else

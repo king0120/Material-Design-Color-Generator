@@ -1,0 +1,16 @@
+%h1 Show Palette
+
+.savedPaletteContainer.col-md-5.center
+  .colors
+    .primaryLightBack{style: "background: #{@palette.light_primary}"}
+    .primaryBack{style: "background: #{@palette.primary}"}
+    .primaryDarkBack{style: "background: #{@palette.dark_primary}"}
+    .accentBack{style: "background: #{@palette.secondary}"}
+  .info
+    %span.name #{@palette.name}
+    %span.created_at #{@palette.created_at.strftime("%d %b. %Y")}
+.col-md-5.right
+  .btn.btn-success.btn-lg
+    =link_to "Edit", edit_path
+  .btn.btn-warning.btn-lg
+    =link_to "Delete", delete_path, method: :delete

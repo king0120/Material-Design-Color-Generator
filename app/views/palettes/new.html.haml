@@ -1,0 +1,56 @@
+%h1 New Palette
+
+
+%ul{class: "colorBoxes"}
+
+.primarySelected
+.secondarySelected
+
+-# .hidden
+= form_for @palette, html: {class: "form-horizontal"} do |m|
+  .form-group
+    = m.label :name, class: "col-sm-2 control-label"
+    .col-sm-8
+      = m.text_field :name, class: "form-control"
+  %br/
+  .form-group
+    = m.label :primary_name, class: "col-sm-2 control-label"
+    .col-sm-8
+      = m.text_field :primary_name, class: "form-control"
+  %br/
+  .form-group
+    = m.label :secondary_name, class: "col-sm-2 control-label"
+    .col-sm-8
+      = m.text_field :secondary_name, class: "form-control"
+  %br/
+  .form-group
+    = m.label :dark_primary, class: "col-sm-2 control-label"
+    .col-sm-8
+      = m.text_area :dark_primary, class: "form-control"
+  %br/
+  .form-group
+    = m.label :light_primary, class: "col-sm-2 control-label"
+    .col-sm-8
+      = m.text_field :light_primary, class: "form-control"
+  %br/
+  .form-group
+    = m.label :primary, class: "col-sm-2 control-label"
+    .col-sm-8
+      = m.text_field :primary, class: "form-control"
+  %br/
+  .form-group
+    = m.label :secondary, class: "col-sm-2 control-label"
+    .col-sm-8
+      = m.text_field :secondary, class: "form-control"
+  %br/
+  .form-group
+    = m.label :text_color, class: "col-sm-2 control-label"
+    .col-sm-8
+      = m.text_field :text_color, class: "form-control"
+  %br/
+  .form-group
+    .col-sm-offset-2.col-sm-8
+      = m.submit "Submit", :class => "btn btn-warning"
+
+:javascript
+  makePalette("primary");
