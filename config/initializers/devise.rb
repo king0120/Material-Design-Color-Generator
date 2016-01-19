@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'e304af2a20f1e4f6ce5f48376544bc7c42d8d139c83e85fa1f20ec0f37a07d05734183f29b9e9c560bd3b5305a45e134d0d34cbfcd92bd990a619fcf33391959'
+  # config.secret_key = '7ccc10bd922d707d04890cb230385ccfbba20ea39326b29843fa35d18648a6741a9d5ba36356021c856b1a8904ec0ff4251d654f49ebbcfb9d21c04928b5e8ff'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -99,7 +99,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '4409ff2352100087f009dfd6c71b79afc35c695ffe2433d37419df14ce672a7a50c9122623fc8e62d0f302d1cf83e71d522272dc299b754bea188e1e58643799'
+  # config.pepper = '14b01886006cfa0e8fc777634c9f8b517da8dc5c3dcd191c7eb00aa34e06c865f78d853b0e9b0fa8484ba64e82354ec88c591ee850ee7db192ee0460ed4e4f0d'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
@@ -150,7 +150,7 @@ Devise.setup do |config|
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  # config.email_regexp = /\A[^@]+@[^@]+\z/
+  config.email_regexp = /\A[^@]+@[^@]+\z/
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
@@ -262,6 +262,4 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-
-  config.assets.initialize_on_precompile = false
 end
