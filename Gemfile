@@ -18,6 +18,7 @@ gem 'rubocop', require: false
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap-material-design'
 gem 'devise-bootstrap-views'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
