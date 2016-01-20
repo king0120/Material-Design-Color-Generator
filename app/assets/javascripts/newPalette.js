@@ -4,7 +4,21 @@ var primaryColor, secondaryColor;
 
 function renderBox(boxes){
   for (i=0;i <colorsJson.length; i++){
-    var individualBox = "<li class='colorBox " + boxes + " box" + i +"'><p>"+ colorsJson[i].name + "</p></li>";
+    if (boxes == "secondary" && colorsJson[i].accent_400 === null){
+
+    } else {
+    var individualBox = "<li class='colorBox " + boxes + " box" + i +"'><p class='renderName'>"+ colorsJson[i].name + "</p>";
+    var hexValue;
+    switch (boxes){
+      case "primary":
+        hexValue = colorsJson[i].palette_500;
+        break;
+      case "secondary":
+        hexValue = colorsJson[i].accent_400;
+    }
+
+    individualBox += "<p class='renderHex'>" + hexValue + "</p>";
+    individualBox += "</li>";
 
     $(individualBox).hide().appendTo('.colorBoxes').fadeIn(1000);
 
@@ -19,6 +33,7 @@ function renderBox(boxes){
       } else {
         $('.box'+i).css('color', 'rgba(0,0,0,.87)');
       }
+    }
   }
 }
 

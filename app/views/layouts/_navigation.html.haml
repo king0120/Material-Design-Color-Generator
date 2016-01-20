@@ -1,5 +1,11 @@
 %nav.navbar.navbar-default.navbar-fixed-top
   .container-fluid
     .navbar-header
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
       = link_to "MDL Colors", root_path, class: "navbar-brand"
-    %ul.nav.navbar-nav.navbar-right= render 'layouts/navigation_links'
+    .collapse.navbar-collapse#navbar-collapse
+      %ul.nav.navbar-nav.navbar-right= render 'layouts/navigation_links'

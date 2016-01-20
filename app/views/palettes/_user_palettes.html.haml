@@ -1,12 +1,12 @@
 .row
-- @palettes.each do |palette|
-  .savedPaletteContainer.col-md-5.center
+  - @palettes.each do |palette|
     =link_to palette do
-      .colors
-        .primaryLightBack{style: "background: #{palette.light_primary}"}
-        .primaryBack{style: "background: #{palette.primary}"}
-        .primaryDarkBack{style: "background: #{palette.dark_primary}"}
-        .accentBack{style: "background: #{palette.secondary}"}
-      .info
-        %span.name #{palette.name}
-        %span.created_at #{palette.created_at.strftime("%d %b. %Y")}
+      .savedPaletteContainer.col-md-4.col-md-offset-1
+        .colors
+          .primaryLightBack{style: "background: #{palette.light_primary}"}
+          .primaryBack{style: "background: #{palette.primary}"}
+          .primaryDarkBack{style: "background: #{palette.dark_primary}"}
+          .accentBack{style: "background: #{palette.secondary}"}
+        .info
+          %span.name #{palette.name}
+          %span.created_at #{palette.created_at.strftime("%d %b. %Y")}

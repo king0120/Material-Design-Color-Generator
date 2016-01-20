@@ -1,12 +1,15 @@
 .savedPalettes {
 }
 
+.center{
+  margin: 15px auto;
+}
+
 .savedPaletteContainer{
   border: 3px solid slategrey;
   padding: 0;
-  display: block;
-  margin: 10px;
   height: 150px;
+  max-width: 4500px;
   position: relative;
   overflow: hidden;
   .info{
@@ -32,5 +35,6 @@
     }
   }
 }
+
 
 

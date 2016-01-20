@@ -27,3 +27,6 @@ $(document).ready(function(){
 setInterval(function(){
   $('.colorCircle').css('background', colorsJson[random()].palette_500);
 }, 2000);
+
+
+

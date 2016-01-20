@@ -20,5 +20,4 @@ module ApplicationHelper
     end
     nil
   end
-
 end
