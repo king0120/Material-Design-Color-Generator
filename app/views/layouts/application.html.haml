@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:name => "viewport" :content => "width=device-width", "initial-scale=1.0", "user-scalable=yes"}
+    -# %meta{ :name => 'viewport', :content => 'width=600px, maximum-scale=1.0' }
     %title Project2
     =csrf_meta_tags
     :javascript
@@ -15,8 +15,11 @@
 
 
   %body.container-fluid
-    .background
-    .background2
+    .backgrounds
+      .background1
+      .background2
+      .background3
+      .background4
     %header= render 'layouts/navigation'
     %main
       = yield

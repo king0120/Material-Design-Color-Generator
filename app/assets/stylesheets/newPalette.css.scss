@@ -52,17 +52,31 @@ h1{
   flex-flow: row wrap;
 }
 
-.background, .background2{
+.backgrounds{
+  position:fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+.background1, .background2, .background3, .background4{
+  display: inline-block;
   transition: .500s ease-out;
   margin-left: -15px;
   height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: -1;
+  width: 25%;
+
+}
+.background1{
+  left: 0;
 }
 .background2{
-  top:0;
-  right: 0;
+  left: 24%;
+}
+.background3{
+  left: 49%;
+}
+.background4{
+  left:74%;
 }
 
 .colorBox{
