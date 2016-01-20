@@ -90,6 +90,7 @@ h1{
   transition: transform .250s ease-in;
   position: relative;
   // display: inline-block;
+
   .renderName{
     position: absolute;
     font-size: 120%;
@@ -101,11 +102,9 @@ h1{
     font-size: 150%;
     bottom:-5px;
     right: 10px;
-
-  }
-  &:hover{
-    transform: scale(1.1);
   }
 }
 
-
+input[name="commit"]{
+  margin-top: -300px;
+}

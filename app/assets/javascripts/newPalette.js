@@ -4,7 +4,7 @@ var pBox, sBox;
 
 
 //Renders clickable boxes to the screen. Runs once to select primary colors and again to run secondary
-function renderBox(boxes, array) {
+function renderBox(boxes, array, light) {
   var individualName = ["50", "100",
     "200", "300",
     "400", "500",
@@ -20,19 +20,23 @@ function renderBox(boxes, array) {
         hexValue = array[i].palette_500;
         individualName[i] = array[i].name;
         background = array[i].palette_500;
+        fontColor = array[i].light;
         break;
       case "secondary":
         console.log("secondary");
         hexValue = array[i].accent_400;
         individualName[i] = array[i].name;
         background = array[i].accent_400;
+        fontColor = array[i].light;
         break;
       case "primaryShades":
+      case "secondaryShades":
         hexValue = array[i];
         background = array[i];
+        fontColor = light;
         break;
     }
-
+    $('h2').css('color', fontColor);
     //If the page is rendering secondary boxes, it eliminates the null values
     if (boxes == "secondary" && hexValue === null) {} else {
       //writes box into the dom
@@ -42,11 +46,11 @@ function renderBox(boxes, array) {
       individualBox += "<p class='renderHex'>" + hexValue + "</p>";
       individualBox += "</li>";
 
-      $(individualBox).hide().appendTo('.colorBoxes').fadeIn(1000);
+      $(individualBox).addClass('animated flipInX').appendTo('.colorBoxes');
 
       $('.box' + i).css('background', background);
 
-      if (array[i].light) {
+      if (fontColor) {
         $('.box' + i).css('color', 'rgba(255,255,255,1)');
       } else {
         $('.box' + i).css('color', 'rgba(0,0,0,.87)');
@@ -71,12 +75,24 @@ function shades() {
     pBox.palette_800, pBox.palette_900
   ];
 
-  renderBox('primaryShades', shades);
+  var textColor = pBox.light;
+
+  renderBox('primaryShades', shades, textColor);
+}
+
+function accentShade(){
+  var shades = [sBox.palette_100, sBox.palette_200,
+    sBox.palette_400, sBox.palette_700
+  ];
+  var textColor = sBox.light;
+  renderBox('secondaryShades', shades, textColor);
 }
 
 function backgroundManipulation() {
   //Changes the background color based on the element being hovered over
   $('.colorBox').hover(function() {
+    $(this).animate({'transform': 'scale(1.1)'})
+    console.log('hello');
     var backgroundColor = $(this).css("background-color");
     $('.background' + backgroundNumber).css('background', backgroundColor);
     // if($(this).hasClass('primary') || $(this).hasClass('primaryShades')){
@@ -101,6 +117,7 @@ function clicks() {
       }
     });
     pBox = pBox[0];
+    $('h2').text('Choose two more colors:');
     shades(primaryColor);
     backgroundManipulation();
   });
@@ -111,6 +128,7 @@ function clicks() {
     if (backgroundNumber < 3) {
       shades(primaryColor);
     } else {
+      $('h2').text('Select an accent color:');
       makePalette("secondary");
     }
     backgroundNumber++;
@@ -124,15 +142,25 @@ function clicks() {
     secondaryColor = $(this).find('p').html();
     console.log(secondaryColor);
     $('.secondary').hide();
-    console.log(primaryColor + "   " + secondaryColor);
-    $('#paletteName').removeClass('hidden');
-    $('#paletteSubmit').removeClass('hidden');
     sBox = colorsJson.filter(function(x) {
       if (x.name === secondaryColor) {
         return x;
       }
     });
     sBox = sBox[0];
+    $('h2').text('Choose the shade of your accent color:');
+    accentShade();
+    backgroundManipulation();
+    // preview();
+  });
+
+  $('.secondaryShades').click(function(){
+    SecondaryColor = $(this).find('p').html();
+    console.log(secondaryColor);
+    $('.secondaryShades').hide();
+    $('#paletteName').removeClass('hidden');
+    $('#paletteSubmit').removeClass('hidden');
+    $('h2').css('color', 'black').text('You did it! Now name your color palette:');
     preview();
   });
 }
