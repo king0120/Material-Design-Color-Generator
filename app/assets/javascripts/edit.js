@@ -7,7 +7,7 @@ function edit(){
     if ($(this).hasClass('primary')){
       renderBox('primary', colorsJson);
       backgroundManipulation();
-      $('h2').text('Select Your Primary Color:').css('color', 'white')
+      $('h2').text('Select Your Primary Color:').css('color', 'black')
       .hide().fadeIn(1500);
     } else {
       var back1 = $('.primaryLightBack').css('background-color');
@@ -19,7 +19,7 @@ function edit(){
       $('.background3').css('background-color', back3);
 
       renderBox('secondary', colorsJson);
-      $('h2').text('Select A New Secondary Color:').css('color', 'white');
+      $('h2').text('Select A New Secondary Color:').css('color', 'black');
     }
   });
 
