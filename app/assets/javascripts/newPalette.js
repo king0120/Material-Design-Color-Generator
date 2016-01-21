@@ -62,7 +62,6 @@ function renderBox(boxes, array, light) {
 
 //Function creates new color palette
 function makePalette(primaryOrSecondary) {
-  $('container-fluid').css('padding', '0');
   renderBox(primaryOrSecondary, colorsJson);
 }
 
@@ -162,7 +161,14 @@ function clicks() {
     $('.secondaryShades').hide();
     $('#paletteName').removeClass('hidden');
     $('#paletteSubmit').removeClass('hidden');
-    $('h2').css('color', 'black').text('You did it! Now name your color palette:');
+    $('.updateMessage').removeClass('hidden');
+    if ($('h2').hasClass('updateMessage' === false)){
+      $('h2').css('color', 'black')
+      .text('You did it! Now name your color palette:');
+    } else {
+      $('h2').css('color', 'black')
+      .text('Looks great! Rename?');
+    }
     preview();
   });
 }
@@ -174,15 +180,22 @@ function preview() {
 }
 
 function submit(primary, secondary) {
+  var checkOverlay = $('.overlay').css('opacity');
+  if (parseInt(checkOverlay) === 1){
+    $('.overlay').css('z-index', '-3').fadeTo(0, 0);
+
+  }
   //Populates the hidden form with information
   formArray = $('form').children();
   $('container-fluid').css('padding', '0 15px');
-
-  $('#palette_primary_name').val(primary.name);
+  if (primary !== undefined){
+    $('#palette_primary_name').val(primary.name);
+    $('#palette_text_color').val(primary.light);
+    $('#palette_dark_primary').val(pri2);
+    $('#palette_light_primary').val(pri3);
+    $('#palette_primary').val(pri1);
+  }
   $('#palette_secondary_name').val(secondary.name);
-  $('#palette_dark_primary').val(pri2);
-  $('#palette_light_primary').val(pri3);
-  $('#palette_primary').val(pri1);
   $('#palette_secondary').val(acc);
-  $('#palette_text_color').val(primary.light);
+
 }

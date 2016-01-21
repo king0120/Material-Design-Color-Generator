@@ -1,0 +1,46 @@
+.savedPalette
+  .info
+    %span.name.left #{@palette.name}
+    %span.created_at.right #{@palette.created_at.strftime("%b. %d %Y")}
+  .fontColors
+    .showBox.primary.primaryLightBack{style: "background: #{@palette.light_primary}"}
+      .colorStyle= "Primary: " << @palette.primary_name.capitalize
+      .hexCopy= @palette.light_primary
+    .showBox.primary.primaryBack{style: "background: #{@palette.primary}"}
+      .colorStyle= "Primary: " << @palette.primary_name.capitalize
+      .hexCopy= @palette.primary
+    .showBox.primary.primaryDarkBack{style: "background: #{@palette.dark_primary}"}
+      .colorStyle= "Primary: " << @palette.primary_name.capitalize
+      .hexCopy= @palette.dark_primary
+    .showBox.accentBack{style: "background: #{@palette.secondary}"}
+      .colorStyle= "Secondary: " << @palette.secondary_name.capitalize
+      .hexCopy= @palette.secondary
+  -if current_page?(palette_path)
+    .fontColors
+      - if @palette.text_color == "true"
+        .showBox.primaryTextL
+          .textStyle Primary Text
+          .hexCopy #ffffff
+        .showBox.secondaryTextL
+          .textStyle Secondary Text/Icons
+          .hexCopy #bcbcbc
+        .showBox.disabledTextL
+          .textStyle Disabled/Hint Text
+          .hexCopy #646464
+        .showBox.dividerTextL
+          .textStyle Dividers
+          .hexCopy #3c3c3c
+      - else
+        .showBox.primaryTextD
+          .textStyle Primary Text
+          .hexCopy #212121
+        .showBox.secondaryTextD
+          .textStyle Secondary Text/Icons
+          .hexCopy #f7f7f7
+        .showBox.disabledTextD
+          .textStyle Disabled/Hint Text
+          .hexCopy #9b9b9b
+        .showBox.dividerTextD
+          .textStyle Dividers
+          .hexCopy #3c3c3c
+  .bottomBorder

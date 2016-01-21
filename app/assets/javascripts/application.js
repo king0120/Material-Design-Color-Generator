@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require newPalette
+//= require edit
 //= require_tree .
 
 function random(){

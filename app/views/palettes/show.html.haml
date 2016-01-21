@@ -6,44 +6,13 @@
         =link_to "Delete", delete_path, method: :delete, data: {confirm: 'Are you sure?'}
       .btn.btn-success.btn-lg.pull-right
         =link_to "Edit", edit_path
-  %p= @palette.text_color
-  .info
-    %span.name.left #{@palette.name}
-    %span.created_at.right #{@palette.created_at.strftime("%b. %d %Y")}
-  .fontColors
-    .showBox.primaryLightBack{style: "background: #{@palette.light_primary}"}
-      %p= @palette.light_primary
-    .showBox.primaryBack{style: "background: #{@palette.primary}"}
-      %p= @palette.primary
-    .showBox.primaryDarkBack{style: "background: #{@palette.dark_primary}"}
-      %p= @palette.dark_primary
-    .showBox.accentBack{style: "background: #{@palette.secondary}"}
-      %p= @palette.secondary
-    .fontColors
-    - if @palette.text_color
-      .showBox.primaryTextL
-        %p fdkjfdlk
-      .showBox.secondaryTextL
-        %p hello
-      .showBox.disabledTextL
-        %p fhdskfdh
-      .showBox.dividerTextL
-        %p jdsaldkdjslk
-    - else
-      .showBox.primaryTextD
-        %p fdkjfdlk
-      .showBox.secondaryTextD
-        %p hello
-      .showBox.disabledTextD
-        %p fhdskfdh
-      .showBox.dividerTextD
-        %p jdsaldkdjslk
-  .bottomBorder
-:javascript
-  console.log(#{@palette.text_color});
-  if (#{@palette.text_color} === true){
-    $('.fontColors').css('color', 'rgba(255,255,255,1)');
-  } else {
-    console.log('workin');
-    $('.fontColors').css('color', 'rgba(0,0,0,.87)');
-  }
+  %br/
+  =render "saved_palettes"
+  :javascript
+    if (#{@palette.text_color} === true){
+        $('.fontColors').css('color', 'rgba(255,255,255,1)');
+      } else {
+        console.log('workin');
+        $('.fontColors').css('color', 'rgba(0,0,0,.87)');
+      }
+
