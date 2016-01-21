@@ -162,7 +162,7 @@ function clicks() {
     $('#paletteName').removeClass('hidden');
     $('#paletteSubmit').removeClass('hidden');
     $('.updateMessage').removeClass('hidden');
-    if ($('h2').hasClass('updateMessage' === false)){
+    if ($('h2').hasClass('updateMessage') === false){
       $('h2').css('color', 'black')
       .text('You did it! Now name your color palette:');
     } else {
