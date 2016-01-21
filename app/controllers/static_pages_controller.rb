@@ -4,5 +4,6 @@ class StaticPagesController < ApplicationController
 
   def explore
     @palettes = Palette.all
+
   end
 end

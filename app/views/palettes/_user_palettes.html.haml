@@ -8,5 +8,7 @@
           .primaryDarkBack{style: "background: #{palette.dark_primary}"}
           .accentBack{style: "background: #{palette.secondary}"}
         .info
-          %span.name #{palette.name}
-          %span.created_at #{palette.created_at.strftime("%d %b. %Y")}
+          %span.name #{palette.name}  Created by:
+          -if current_page?(explore_path)
+            %span.created_by #{User.find(palette.user_id).user_name}
+          %span.created_at.pull-right #{palette.created_at.strftime("%b. %d %Y")}
