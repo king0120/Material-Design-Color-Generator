@@ -61,22 +61,24 @@ h1{
 .background1, .background2, .background3, .background4{
   display: inline-block;
   transition: .500s ease-out;
-  margin-left: -15px;
   height: 100%;
   width: 25%;
 
+}
+.background2, .background3, .background4{
+  margin-left: -4px;
 }
 .background1{
   left: 0;
 }
 .background2{
-  left: 24%;
+  left: 25%;
 }
 .background3{
-  left: 49%;
+  left: 50%;
 }
 .background4{
-  left:74%;
+  left:75%;
 }
 
 .colorBox{
@@ -105,6 +107,6 @@ h1{
   }
 }
 
-input[name="commit"]{
+input[name="commit"].newSubmit{
   margin-top: -300px;
 }

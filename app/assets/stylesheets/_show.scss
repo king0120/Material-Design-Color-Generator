@@ -1,0 +1,75 @@
+.show{
+  width: 90%;
+  margin: 0 auto;
+  .info{
+    width: 100%;
+    background: #123e56;
+    color: white;
+    position: relative;
+    height: 40px;
+    .left{
+      font-size: 2rem;
+      padding: 2.5px;
+      position: absolute;
+      left: 2.5px;
+      bottom: 2.5px;
+    }
+    .right{
+      position: absolute;
+      right: 5px;
+    }
+  }
+  .fontColors{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: no-wrap;
+  }
+  .showBox{
+    display: inline-block;
+    width: 25%;
+    height: 150px;
+
+  }
+  .primaryBack, .primaryDarkBack, .accentBack{
+      // margin: 0 -10px;
+  }
+  .primaryTextL{
+    background: #ffffff;
+    color: #7d7d7d;
+  }
+  .secondaryTextL{
+    background: #bcbcbc;
+    color: #5c5c5c;
+  }
+  .disabledTextL{
+    background: #646464;
+    color: #f6f6f6;
+  }
+  .dividerTextL{
+    background: #3c3c3c;
+    color: #c3c3c3;
+  }
+  .primaryTextD{
+    background: #ffffff;
+    color: #7d7d7d;
+  }
+  .secondaryTextD{
+    background: #bcbcbc;
+    color: #5c5c5c;
+  }
+  .disabledTextD{
+    background: #646464;
+    color: #f6f6f6;
+  }
+  .dividerTextD{
+    background: #3c3c3c;
+    color: #c3c3c3;
+  }
+  .bottomBorder{
+    width: 100%;
+    background: #123e56;
+    height: 20px;
+  }
+}
