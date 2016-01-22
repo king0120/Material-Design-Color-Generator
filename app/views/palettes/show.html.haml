@@ -3,10 +3,8 @@
     .header
       %h1 Show Palette
       - if @palette.user_id == current_user.id
-        .btn.btn-warning.btn-lg.pull-right
-          =link_to "Delete", delete_path, method: :delete, data: {confirm: 'Are you sure?'}
-        .btn.btn-success.btn-lg.pull-right
-          =link_to "Edit", edit_path
+        =link_to "Delete", delete_path, method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-warning btn-lg pull-right"
+        =link_to "Edit", edit_path, :class => "btn btn-success btn-lg pull-right"
     %br/
     =render "saved_palettes"
     :javascript
