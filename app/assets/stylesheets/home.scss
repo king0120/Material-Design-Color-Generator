@@ -18,8 +18,29 @@
     text-align: right;
   }
   .colorText{
+    p{
+      font-size: 1.3em;
+    }
   }
   h2{
     text-align: center;
+  }
+}
+
+.footer{
+  position: absolute;
+  bottom: -330px;
+  width: 100%;
+  background: #4DB6AC;
+  padding: 10px;
+  text-align: right;
+  .text-muted{
+    span{
+      font-size: 1.3em;
+    }
+    *{
+      margin: 0 5px;
+    }
+    color: #ffffff;
   }
 }

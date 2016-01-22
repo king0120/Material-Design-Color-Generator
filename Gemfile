@@ -19,6 +19,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap-material-design'
 gem 'devise-bootstrap-views'
 gem 'figaro'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'byebug'

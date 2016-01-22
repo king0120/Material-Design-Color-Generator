@@ -7,6 +7,8 @@
     =csrf_meta_tags
     :javascript
       colorsJson = #{Color.json}
+    %link{rel: "stylesheet", href:"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700", type:"text/css"}
+    %link{href:"https://fonts.googleapis.com/icon?family=Material+Icons", rel:"stylesheet"}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
@@ -23,5 +25,6 @@
     %main
       = yield
       = flash_messages
+
 
 
