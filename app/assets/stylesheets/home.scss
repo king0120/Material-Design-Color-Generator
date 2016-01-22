@@ -1,0 +1,25 @@
+.jumbotron {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.colorCopy{
+  margin: 0 auto;
+  width: 80%;
+  color: black;
+  font-size: 1.2em;
+  .firstRow{
+    display: flex;
+    justify-content: space-around;
+    text-align: right;
+  }
+  .colorText{
+  }
+  h2{
+    text-align: center;
+  }
+}

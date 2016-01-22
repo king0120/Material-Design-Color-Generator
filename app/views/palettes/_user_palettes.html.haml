@@ -10,8 +10,8 @@
           .accentBack{style: "background: #{palette.secondary}"}
         .info
           %span.name #{palette.name}
-          %span by:
           -if current_page?(explore_path)
+            %span by:
             %span.created_by #{User.find(palette.user_id).user_name}
           %span.created_at.pull-right #{palette.created_at.strftime("%b. %d %Y")}
       -# .col-md-1

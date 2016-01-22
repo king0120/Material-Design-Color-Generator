@@ -1,8 +1,12 @@
+:css
+  body{
+    background: url('http://www.topofandroid.com/wp-content/uploads/2015/05/Android-L-Material-Design-Wallpapers-5.png');
+  }
+
 .jumbotron
-  .colorCircle
   .introText
-    %h1 Hello World!
-    %h3 Welcome To The Color Palette Generator
+    %h1 Material Design Color Scheme Generator
+    %h3 Find a bold, vibrant palette for your next design project.
     -if user_signed_in?
       = link_to "Browse All", explore_path, class: "btn btn-large btn-primary"
       = link_to "Create New",  new_path, class: "btn btn-large btn-primary"
@@ -10,3 +14,21 @@
       = link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary"
       = link_to "Sign in",      new_user_session_path, class: "btn btn-large btn-primary"
 
+.colorCopy.well
+  .firstRow
+    .colorCircle
+    .colorText
+      %h2 What is Material Design?
+      %p Material design is a design language created by Google in 2014.  It emphasizes the use of striking colors, depth, and smooth animations and transitions to create a seamless UX.
+      %p Color in material design is inspired by strong hues juxtaposed with muted environments, deep shadows, and bright highlights. Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.
+
+  %br/
+  %p One of the easiest way to ruin the users experience in your project is through the wrong color choice.  On the other hand, having an attractive color scheme is one of the best ways to add polish to your site or app.
+  %p This application uses the Material Design language to assist you in finding the color scheme that matches the theme of your application.
+  %p Each color palette is made up of 1 principal color, 2 additional shades of that color, and an accent to make important elements stand out.
+  %p You can easily save and edit your color schemes for later use and explore the palettes created by other users.
+
+  %h2 Experiment and Be Bold!
+
+  -# %p Opaque material promotes content, whereas translucent material confuses focus and content’s ability to be manipulated.
+  -# %p Toolbars and large color blocks should have your primary color.  Don't be afraid to use colors on large fields.

@@ -1,6 +1,8 @@
 *{
   box-sizing: border-box;
 }
+
+
 .container-fluid{
 //   padding-left: 0;
 //   padding-right: 0;
@@ -22,26 +24,18 @@ main{
   display:none;
 }
 
-.jumbotron {
-  margin: 0 auto;
-  width: 80%;
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
 h1{
   text-align: center;
 }
 
 .colorCircle {
-  height: 300px;
-  width: 300px;
-  border-radius: 100%;
-  transition: 1s linear;
+    min-height: 25vw;
+    max-height: 25vw;
+    min-width: 25vw;
+    max-width: 25vw;
+    border-radius: 100%;
+    transition: .500s linear;
 }
-
 
 .colorBoxes{
   margin-left: -15px;
@@ -107,6 +101,6 @@ h1{
   }
 }
 
-input[name="commit"]{
+.col-sm-8 input[name="commit"]{
   margin-top: -300px;
 }
