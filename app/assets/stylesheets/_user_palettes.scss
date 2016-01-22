@@ -12,12 +12,16 @@
   margin: 15px auto;
 }
 
+.row .col-md-6{
+  padding: 15px 30px;
+}
+
 .savedPaletteContainer{
   border: 3px solid slategrey;
   padding: 0;
-  margin-top: 10px;
+  margin: 5px auto;
   height: 150px;
-  max-width: 4500px;
+  max-width: 90%;
   position: relative;
   overflow: hidden;
   .info{
@@ -28,7 +32,18 @@
     color: white;
     .created_at{
       text-align: right;
+      margin-top: 5px;
+      margin-right: 10px;
     }
+  }
+  span{
+    bottom: 3px;
+    font-size: 1.2rem;
+  }
+  .name{
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-left: 10px;
   }
   .colors {
     position: absolute;
@@ -43,6 +58,4 @@
     }
   }
 }
-
-
 

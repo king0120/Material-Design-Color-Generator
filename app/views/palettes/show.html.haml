@@ -1,18 +1,19 @@
-.show
-  .header
-    %h1 Show Palette
-    - if @palette.user_id == current_user.id
-      .btn.btn-warning.btn-lg.pull-right
-        =link_to "Delete", delete_path, method: :delete, data: {confirm: 'Are you sure?'}
-      .btn.btn-success.btn-lg.pull-right
-        =link_to "Edit", edit_path
-  %br/
-  =render "saved_palettes"
-  :javascript
-    if (#{@palette.text_color} === true){
-        $('.fontColors').css('color', 'rgba(255,255,255,1)');
-      } else {
-        console.log('workin');
-        $('.fontColors').css('color', 'rgba(0,0,0,.87)');
-      }
+.container-fluid
+  .show
+    .header
+      %h1 Show Palette
+      - if @palette.user_id == current_user.id
+        .btn.btn-warning.btn-lg.pull-right
+          =link_to "Delete", delete_path, method: :delete, data: {confirm: 'Are you sure?'}
+        .btn.btn-success.btn-lg.pull-right
+          =link_to "Edit", edit_path
+    %br/
+    =render "saved_palettes"
+    :javascript
+      if (#{@palette.text_color} === true){
+          $('.fontColors').css('color', 'rgba(255,255,255,1)');
+        } else {
+          console.log('workin');
+          $('.fontColors').css('color', 'rgba(0,0,0,.87)');
+        }
 

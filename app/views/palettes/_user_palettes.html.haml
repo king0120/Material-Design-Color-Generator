@@ -1,14 +1,18 @@
 .row
   - @palettes.each do |palette|
-    =link_to palette do
-      .savedPaletteContainer.col-md-4.col-md-offset-1
+    -# .col-md-1
+    =link_to palette, {class: "col-md-6"} do
+      .savedPaletteContainer
         .colors
           .primaryLightBack{style: "background: #{palette.light_primary}"}
           .primaryBack{style: "background: #{palette.primary}"}
           .primaryDarkBack{style: "background: #{palette.dark_primary}"}
           .accentBack{style: "background: #{palette.secondary}"}
         .info
-          %span.name #{palette.name}  Created by:
+          %span.name #{palette.name}
+          %span by:
           -if current_page?(explore_path)
             %span.created_by #{User.find(palette.user_id).user_name}
           %span.created_at.pull-right #{palette.created_at.strftime("%b. %d %Y")}
+      -# .col-md-1
+      -# %br/

@@ -15,7 +15,7 @@ class PalettesController < ApplicationController
   def create
     @palette = current_user.palettes.new(palette_params)
     @palette.save
-    redirect_to palettes_path
+    redirect_to @palette
   end
 
   def edit

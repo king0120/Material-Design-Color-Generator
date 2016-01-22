@@ -1,6 +1,7 @@
-.header
-  %h1 Your Saved Color Schemes
-  =link_to "create new", 'palettes/new', {class: 'btn btn-success center pull-right'}
-.savedPalettes
-  =render "user_palettes"
+.container-fluid
+  .header
+    %h1 Your Saved Color Schemes
+    =link_to "create new", 'palettes/new', {class: 'btn btn-success center pull-right'}
+  .savedPalettes
+    =render "user_palettes"
 

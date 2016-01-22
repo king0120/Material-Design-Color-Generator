@@ -1,5 +1,6 @@
 function edit(){
   $('.showBox').click(function(){
+    $('h1').fadeOut(500);
     $('.savedPalette').fadeOut(500);
     $('.overlay').css('z-index', '1').fadeTo(500, 1);
     $('.overlay').append("<ul class='colorBoxes'>");

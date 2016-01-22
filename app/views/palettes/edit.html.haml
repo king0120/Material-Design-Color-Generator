@@ -1,6 +1,6 @@
 .show
   - if @palette.user_id == current_user.id
-
+    %h1 Click a color to edit:
     =render "saved_palettes.html.haml"
 
     = form_for @palette, html: {class: "form-horizontal"} do |m|
