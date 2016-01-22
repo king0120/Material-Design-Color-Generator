@@ -1,86 +1,46 @@
 #Material Design Color Generator
 ##ATL WDI Project #1
 
-<img src="images/tetris-screenshot.png" width='700px' alt="">
-
 
 ##Planning
-###Wireframes:
-<img src="images/mockup.png" width='500px' alt="">
 
-
-###Notes and Mockups
-<img src="images/notecards.jpg" width='300px' style="float:left" alt="">
-<img src="images/planning1.jpg" width='300px' style="float:left" alt="">
-<img src="images/planning2.jpg" width='300px' style="float:left" alt=""><br>
-[Trello](https://trello.com/b/g5dBuQrF/tetris-wdi-project-1)<br><br>
-[Tetris Wikipedia Article](https://en.wikipedia.org/wiki/Tetris)
+<img src="http://i.imgur.com/fEUFH0x.png" alt="user stories">
+<img src="http://i.imgur.com/w4KjCnA.png" alt="erd kinda">
+<img src="http://i.imgur.com/xEmCxzp.png" style="float:left" alt="wireframe left"><br>
+<img src="http://i.imgur.com/yQEin5p.png" style="float:left" alt="wireframe right"><br>
+[Trello](https://trello.com/b/NHaNca52/wdi-project-2)<br><br>
+[Material Design Specs](https://www.google.com/design/spec/material-design/introduction.html)
 
 
 
 ##Building
-###Software
-<img src="images/jade.png" width='300px' alt="">
-<img src="images/sass-logo.png" width='200px' alt="">
-<img src="images/html5.png" width='200px' alt="">
-<img src="images/codekit.png" width='300px' alt="">
+###Tools
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Ruby_on_Rails.svg/791px-Ruby_on_Rails.svg.png" width='200px' alt="">
+<img src="https://pbs.twimg.com/profile_images/70872395/Picture_2_400x400.png" width='200px' alt="">
+<br/>
+<img src="https://camo.githubusercontent.com/b1c21cc10f2f94857dea5135fe55f2e4d451e028/68747470733a2f2f7261772e6769746875622e636f6d2f706c617461666f726d617465632f6465766973652f6d61737465722f6465766973652e706e67" width='200px' alt="">
+<img src="https://www.filyawconsulting.com/wp-content/uploads/2015/10/bootstrap-website-design-Atlanta-GA.png" width='200px' alt="">
 
 ###Issues
 
-#####Nested for loops
-  ```javascript
-    for (var j = 0; j < shapes.length; j++) {
-      for (var i = 0; i < fallen.length; i++)
-  ```
-      vs.
-  ```javascript
-    for (var i = 0; i < fallen.length; i++) {
-      for (var j = 0; j < shapes.length; j++) {
-  ```
-  Result: Speed quadruples every time a new tetrino is made
+#####Pushing to Heroku
+When I first tried to deploy to Heroku, my upload was aborted multiple times.  Heroku could not read the secret key needed by Devise for the upload.  Fixed this through altering my gitignore file (temporary fix)
 
 
-#####Animating in HTML5 Canvas
-  ```javascript
-  var myState = canvas;
-  myState.interval = 33 / 2;
+#####Organization
+As my app grew, it became harder to keep track of the Javascript and Sass due lack of comments and organization.  Currently working to fix this.
 
-  function drawing() {
-    draw(canvas);
-  }
-
-  setInterval(drawing, myState.interval);
-  ```
-  Every second, the canvas erases and redraws everything 60 times.
-  Required me to consider how movement and animation works. (Shoutout to the [Animation Thunder Talk](https://github.com/sims226/thunder-animation-basics))
-
-#####Type and orientation of falling tetrino
-  ```javascript
-  switch (tetrino[0].color) {
-    case "#9013FE": //tBlock
-      switch (true) {
-        case (Math.ceil(tetrino[0].x - tetrino[2].x) === 1 ||
-              Math.ceil(tetrino[0].x - tetrino[2].x) === 0) &&
-              Math.ceil(tetrino[0].y - tetrino[2].y) === Math.ceil(tHeight):
-          tetrino[0].x += left;
-          tetrino[0].y += up;
-          tetrino[1].x += left;
-          tetrino[1].y += down;
-          tetrino[3].x += right;
-          tetrino[3].y += up;
-          break;
-  ```
-  Since each of the 4 blocks are written independant of one another, I used multiple switch statements to detect which tetrino was dropping, which rotation it was in, and provide instructions for it to turn clockwise.
-  In total, I had to determine the type and orientation of 18 different combinations of tetrino.
+#####Secret Forms
+One of the main things I wanted to incorporate into my design was a really easy experience when trying to add a color scheme.  In order to do this, I used JavaScript to fill out a form that is hidden on the page.  After all colors have been selected, the name form and submit button appear for the user to save their colors.
 
 ##Planned Updates:
-1. Horizontal collision detection with walls to keep block from going off screen
-2. Scoring according to official tetris rules
-3. Top Score Feature
-4. Add levels that increase the speed of the falling block
-5. Fix sizing of .png images and make more responsive
-6. Add touch controls for mobile
-7. Add a restart button and game over screen
+1. Favorites tab: User can click to save color schemes made by other users.
+2. Click to Copy.  Clicking a color will automatically add it to clipboard.
+3. Expanded profiles.
+4. Better name.
+5. Original background assets.
+6. Add color scheme to demo layouts.
+
 
 
 #Enjoy!
